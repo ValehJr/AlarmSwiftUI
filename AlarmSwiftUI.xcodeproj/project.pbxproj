@@ -12,6 +12,12 @@
 		1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383EC2C91E120008EA6D7 /* Item.swift */; };
 		1D8383EF2C91E122008EA6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8383EE2C91E122008EA6D7 /* Assets.xcassets */; };
 		1D8383F22C91E122008EA6D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D8383F12C91E122008EA6D7 /* Preview Assets.xcassets */; };
+		1D8383FE2C91E6E9008EA6D7 /* ScreenSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383FD2C91E6E9008EA6D7 /* ScreenSelectionView.swift */; };
+		1D8384042C91FCD4008EA6D7 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384002C91FCD4008EA6D7 /* OpenSans-Bold.ttf */; };
+		1D8384052C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384012C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf */; };
+		1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */; };
+		1D8384072C91FCD4008EA6D7 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */; };
+		1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,13 @@
 		1D8383EC2C91E120008EA6D7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1D8383EE2C91E122008EA6D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D8383F12C91E122008EA6D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D8383FD2C91E6E9008EA6D7 /* ScreenSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSelectionView.swift; sourceTree = "<group>"; };
+		1D8384002C91FCD4008EA6D7 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		1D8384012C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		1D8384082C91FD53008EA6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +66,14 @@
 		1D8383E72C91E120008EA6D7 /* AlarmSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1D8384082C91FD53008EA6D7 /* Info.plist */,
 				1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */,
-				1D8383EA2C91E120008EA6D7 /* ContentView.swift */,
-				1D8383EC2C91E120008EA6D7 /* Item.swift */,
+				1D8383FA2C91E6A3008EA6D7 /* Model */,
+				1D8383F92C91E696008EA6D7 /* Utility */,
+				1D8383F82C91E653008EA6D7 /* View */,
+				1D8384092C921F04008EA6D7 /* Design */,
 				1D8383EE2C91E122008EA6D7 /* Assets.xcassets */,
+				1D8383FF2C91FCC8008EA6D7 /* Font */,
 				1D8383F02C91E122008EA6D7 /* Preview Content */,
 			);
 			path = AlarmSwiftUI;
@@ -68,6 +85,49 @@
 				1D8383F12C91E122008EA6D7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D8383F82C91E653008EA6D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D8383EA2C91E120008EA6D7 /* ContentView.swift */,
+				1D8383FD2C91E6E9008EA6D7 /* ScreenSelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1D8383F92C91E696008EA6D7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1D8383FA2C91E6A3008EA6D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1D8383EC2C91E120008EA6D7 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D8383FF2C91FCC8008EA6D7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1D8384002C91FCD4008EA6D7 /* OpenSans-Bold.ttf */,
+				1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */,
+				1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */,
+				1D8384012C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		1D8384092C921F04008EA6D7 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */,
+			);
+			path = Design;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +188,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8384072C91FCD4008EA6D7 /* OpenSans-Medium.ttf in Resources */,
+				1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */,
+				1D8384052C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf in Resources */,
 				1D8383F22C91E122008EA6D7 /* Preview Assets.xcassets in Resources */,
 				1D8383EF2C91E122008EA6D7 /* Assets.xcassets in Resources */,
+				1D8384042C91FCD4008EA6D7 /* OpenSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */,
+				1D8383FE2C91E6E9008EA6D7 /* ScreenSelectionView.swift in Sources */,
+				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
 				1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */,
 				1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */,
 			);
@@ -279,6 +345,7 @@
 				DEVELOPMENT_TEAM = W8RLJ8MS39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlarmSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +375,7 @@
 				DEVELOPMENT_TEAM = W8RLJ8MS39;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AlarmSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
