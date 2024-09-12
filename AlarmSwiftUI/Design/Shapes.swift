@@ -77,3 +77,13 @@ struct TimeCapsule:View {
 		 .frame(maxWidth: 200,maxHeight: 80)
    }
 }
+
+struct StopwatchCapsule:View {
+   var body: some View {
+	  Capsule()
+		 .fill(Color.background)
+		 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 3, y: 3)
+		 .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+		 .frame(maxWidth: 320, maxHeight: 60)
+   }
+}

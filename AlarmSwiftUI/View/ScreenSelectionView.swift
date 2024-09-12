@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScreenSelectionView: View {
    @State private var selectedButton: String? = "Clock"
+   @Binding var selectedScreen: Screen
 
    var body: some View {
 	  ZStack {
@@ -20,6 +21,7 @@ struct ScreenSelectionView: View {
 		 HStack {
 			Button(action: {
 			   selectedButton = "Clock"
+			   selectedScreen = .clock
 			}) {
 			   Text("Clock")
 			}
@@ -30,6 +32,7 @@ struct ScreenSelectionView: View {
 
 			Button(action: {
 			   selectedButton = "Alarm"
+			   selectedScreen = .alarm
 			}) {
 			   Text("Alarm")
 			}
@@ -37,21 +40,24 @@ struct ScreenSelectionView: View {
 			.frame(width: 70, height: 22)
 
 			Spacer()
-			
+
 			Button(action: {
-			   selectedButton = "Timer"
+			   selectedButton = "Stopwatch"
+			   selectedScreen = .stopwatch
 			}) {
-			   Text("Timer")
+			   Text("Stopwatch")
 			}
-			.buttonStyle(CustomButtonStyle(isSelected: selectedButton == "Timer"))
-			.frame(width: 70, height: 22)
+			.buttonStyle(CustomButtonStyle(isSelected: selectedButton == "Stopwatch"))
+			.frame(width: 110, height: 22)
 		 }//H
 		 .padding(.horizontal)
 	  }//Z
-	  .frame(width: 300,height: 48)
+	  .frame(maxWidth: 330)
+	  .frame(height: 48)
    }
 }
 
 #Preview {
-   ScreenSelectionView()
+   @State var screen = Screen.clock
+   return ScreenSelectionView(selectedScreen: $screen)
 }

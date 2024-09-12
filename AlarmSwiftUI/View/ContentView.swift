@@ -9,35 +9,30 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
+   @State private var selectedScreen: Screen = .clock
     var body: some View {
 	   VStack {
-		  ScreenSelectionView()
+		  ScreenSelectionView(selectedScreen: $selectedScreen)
 			 .padding(.bottom)
-		  ClockView()
-	   }
-	   .padding(.bottom,140)
+		  switch selectedScreen {
+			 case .clock:
+				ClockView()
+				   .transition(.blurReplace)
+			 case .alarm:
+				AlarmView()
+				   .transition(.blurReplace)
+			 case .stopwatch:
+				StopwatchView()
+				   .modelContainer(for: Lap.self, inMemory: true)
+				   .transition(.blurReplace)
+		  }
+		  Spacer()
+	   }//V
+	   .animation(.easeInOut(duration: 0.3), value: selectedScreen)
+	   .padding(.top)
 	}
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

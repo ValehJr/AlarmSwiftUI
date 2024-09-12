@@ -23,6 +23,13 @@
 		1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */; };
 		1D8384072C91FCD4008EA6D7 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */; };
 		1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */; };
+		1DB584622C9373A7000E204F /* LapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584612C9373A7000E204F /* LapsView.swift */; };
+		1DB584642C937452000E204F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584632C937452000E204F /* Constant.swift */; };
+		1DB584662C937CB9000E204F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584652C937CB9000E204F /* Screen.swift */; };
+		1DB584682C937D78000E204F /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584672C937D78000E204F /* AlarmView.swift */; };
+		1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA902C932E6800167034 /* StopwatchView.swift */; };
+		1DCEAA942C9340F200167034 /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA932C9340F200167034 /* StopwatchViewModel.swift */; };
+		1DCEAA982C93643800167034 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA972C93643800167034 /* Lap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +51,13 @@
 		1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		1D8384082C91FD53008EA6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		1DB584612C9373A7000E204F /* LapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsView.swift; sourceTree = "<group>"; };
+		1DB584632C937452000E204F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		1DB584652C937CB9000E204F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		1DB584672C937D78000E204F /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		1DCEAA902C932E6800167034 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
+		1DCEAA932C9340F200167034 /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
+		1DCEAA972C93643800167034 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +93,9 @@
 				1D8384082C91FD53008EA6D7 /* Info.plist */,
 				1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */,
 				1D8383FA2C91E6A3008EA6D7 /* Model */,
-				1D8383F92C91E696008EA6D7 /* Utility */,
 				1D8383F82C91E653008EA6D7 /* View */,
+				1DCEAA922C9340CC00167034 /* ViewModel */,
+				1D8383F92C91E696008EA6D7 /* Utility */,
 				1D8384092C921F04008EA6D7 /* Design */,
 				1D8383EE2C91E122008EA6D7 /* Assets.xcassets */,
 				1D8383FF2C91FCC8008EA6D7 /* Font */,
@@ -105,6 +120,9 @@
 				1D60B0562C92E13500A12868 /* ClockView.swift */,
 				1D60B05A2C92E64700A12868 /* ClockPointView.swift */,
 				1D60B0622C9301DF00A12868 /* TimeView.swift */,
+				1DB584672C937D78000E204F /* AlarmView.swift */,
+				1DCEAA902C932E6800167034 /* StopwatchView.swift */,
+				1DB584612C9373A7000E204F /* LapsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +130,7 @@
 		1D8383F92C91E696008EA6D7 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1DB584632C937452000E204F /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -120,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				1D8383EC2C91E120008EA6D7 /* Item.swift */,
+				1DCEAA972C93643800167034 /* Lap.swift */,
+				1DB584652C937CB9000E204F /* Screen.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +164,14 @@
 				1D60B05F2C92FF9C00A12868 /* Triangle.swift */,
 			);
 			path = Design;
+			sourceTree = "<group>";
+		};
+		1DCEAA922C9340CC00167034 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1DCEAA932C9340F200167034 /* StopwatchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,13 +248,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB584622C9373A7000E204F /* LapsView.swift in Sources */,
 				1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */,
+				1DB584642C937452000E204F /* Constant.swift in Sources */,
 				1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */,
 				1D60B0572C92E13500A12868 /* ClockView.swift in Sources */,
 				1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */,
+				1DCEAA982C93643800167034 /* Lap.swift in Sources */,
+				1DB584682C937D78000E204F /* AlarmView.swift in Sources */,
+				1DB584662C937CB9000E204F /* Screen.swift in Sources */,
 				1D8383FE2C91E6E9008EA6D7 /* ScreenSelectionView.swift in Sources */,
 				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
+				1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */,
 				1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */,
+				1DCEAA942C9340F200167034 /* StopwatchViewModel.swift in Sources */,
 				1D60B0632C9301DF00A12868 /* TimeView.swift in Sources */,
 				1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */,
 				1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */,
