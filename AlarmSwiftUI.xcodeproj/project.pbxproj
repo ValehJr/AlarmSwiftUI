@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D60B0572C92E13500A12868 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0562C92E13500A12868 /* ClockView.swift */; };
+		1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0582C92E5F500A12868 /* Shapes.swift */; };
+		1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05A2C92E64700A12868 /* ClockPointView.swift */; };
+		1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05F2C92FF9C00A12868 /* Triangle.swift */; };
+		1D60B0632C9301DF00A12868 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0622C9301DF00A12868 /* TimeView.swift */; };
 		1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */; };
 		1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383EA2C91E120008EA6D7 /* ContentView.swift */; };
 		1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383EC2C91E120008EA6D7 /* Item.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D60B0562C92E13500A12868 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		1D60B0582C92E5F500A12868 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		1D60B05A2C92E64700A12868 /* ClockPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPointView.swift; sourceTree = "<group>"; };
+		1D60B05F2C92FF9C00A12868 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		1D60B0622C9301DF00A12868 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		1D8383E52C91E120008EA6D7 /* AlarmSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSwiftUIApp.swift; sourceTree = "<group>"; };
 		1D8383EA2C91E120008EA6D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +102,9 @@
 			children = (
 				1D8383EA2C91E120008EA6D7 /* ContentView.swift */,
 				1D8383FD2C91E6E9008EA6D7 /* ScreenSelectionView.swift */,
+				1D60B0562C92E13500A12868 /* ClockView.swift */,
+				1D60B05A2C92E64700A12868 /* ClockPointView.swift */,
+				1D60B0622C9301DF00A12868 /* TimeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */,
+				1D60B0582C92E5F500A12868 /* Shapes.swift */,
+				1D60B05F2C92FF9C00A12868 /* Triangle.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -204,9 +219,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */,
 				1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */,
+				1D60B0572C92E13500A12868 /* ClockView.swift in Sources */,
+				1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */,
 				1D8383FE2C91E6E9008EA6D7 /* ScreenSelectionView.swift in Sources */,
 				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
+				1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */,
+				1D60B0632C9301DF00A12868 /* TimeView.swift in Sources */,
 				1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */,
 				1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */,
 			);
