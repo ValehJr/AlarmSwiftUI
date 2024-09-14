@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0E39E62C941992006E99B0 /* SingleAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */; };
 		1D60B0572C92E13500A12868 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0562C92E13500A12868 /* ClockView.swift */; };
 		1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0582C92E5F500A12868 /* Shapes.swift */; };
 		1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05A2C92E64700A12868 /* ClockPointView.swift */; };
@@ -23,6 +24,8 @@
 		1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */; };
 		1D8384072C91FCD4008EA6D7 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */; };
 		1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */; };
+		1DAD04502C94B5CC00DB4F4A /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */; };
+		1DAD04522C94CE1200DB4F4A /* AlarmSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */; };
 		1DB584622C9373A7000E204F /* LapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584612C9373A7000E204F /* LapsView.swift */; };
 		1DB584642C937452000E204F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584632C937452000E204F /* Constant.swift */; };
 		1DB584662C937CB9000E204F /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584652C937CB9000E204F /* Screen.swift */; };
@@ -33,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAlarmView.swift; sourceTree = "<group>"; };
 		1D60B0562C92E13500A12868 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		1D60B0582C92E5F500A12868 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		1D60B05A2C92E64700A12868 /* ClockPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPointView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		1D8384082C91FD53008EA6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
+		1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSetupView.swift; sourceTree = "<group>"; };
 		1DB584612C9373A7000E204F /* LapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsView.swift; sourceTree = "<group>"; };
 		1DB584632C937452000E204F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		1DB584652C937CB9000E204F /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 				1D60B05A2C92E64700A12868 /* ClockPointView.swift */,
 				1D60B0622C9301DF00A12868 /* TimeView.swift */,
 				1DB584672C937D78000E204F /* AlarmView.swift */,
+				1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */,
+				1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */,
 				1DCEAA902C932E6800167034 /* StopwatchView.swift */,
 				1DB584612C9373A7000E204F /* LapsView.swift */,
 			);
@@ -160,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */,
+				1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */,
 				1D60B0582C92E5F500A12868 /* Shapes.swift */,
 				1D60B05F2C92FF9C00A12868 /* Triangle.swift */,
 			);
@@ -258,6 +267,9 @@
 				1DB584682C937D78000E204F /* AlarmView.swift in Sources */,
 				1DB584662C937CB9000E204F /* Screen.swift in Sources */,
 				1D8383FE2C91E6E9008EA6D7 /* ScreenSelectionView.swift in Sources */,
+				1DAD04502C94B5CC00DB4F4A /* CustomToggleStyle.swift in Sources */,
+				1D0E39E62C941992006E99B0 /* SingleAlarmView.swift in Sources */,
+				1DAD04522C94CE1200DB4F4A /* AlarmSetupView.swift in Sources */,
 				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
 				1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */,
 				1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */,

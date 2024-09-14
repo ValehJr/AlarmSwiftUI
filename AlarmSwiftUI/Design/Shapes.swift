@@ -87,3 +87,24 @@ struct StopwatchCapsule:View {
 		 .frame(maxWidth: 320, maxHeight: 60)
    }
 }
+
+struct AlarmRoundedRectangle:View {
+   var body: some View {
+	  RoundedRectangle(cornerRadius: 36)
+		 .fill(Color.background)
+		 .shadow(color: Color.black.opacity(0.2), radius: 10, x: 5, y: 5)
+		 .shadow(color: Color.white.opacity(1), radius: 10, x: -5, y: -5)
+		 .frame(maxWidth: 340,maxHeight: 120)
+   }
+}
+
+struct AlarmPlusButton:View {
+   var body: some View {
+	  Image(systemName: "plus.circle.fill")
+		 .resizable()
+		 .scaledToFill()
+		 .frame(width: 63,height: 63)
+		 .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.gradientColor1,.gradientColor1.opacity(0.9),.gradientColor2]), startPoint: .topLeading, endPoint: .bottomTrailing))
+		 .shadow(color: .shadow, radius: 2, x: 3, y: 3)
+   }
+}
