@@ -47,7 +47,7 @@ struct SmallCircle:View {
 struct GradientCircle:View {
    var body: some View {
 	  Circle()
-		 .fill(LinearGradient(colors: [.gradientColor1,.gradientColor2], startPoint: .topLeading, endPoint: .bottomTrailing))
+		 .fill(gradientColor)
 		 .frame(maxWidth: 15,maxHeight: 15)
    }
 }
@@ -90,7 +90,7 @@ struct StopwatchCapsule:View {
 
 struct AlarmRoundedRectangle:View {
    var body: some View {
-	  RoundedRectangle(cornerRadius: 36)
+	  RoundedRectangle(cornerRadius: 28)
 		 .fill(Color.background)
 		 .shadow(color: Color.black.opacity(0.2), radius: 10, x: 5, y: 5)
 		 .shadow(color: Color.white.opacity(1), radius: 10, x: -5, y: -5)
@@ -106,5 +106,14 @@ struct AlarmPlusButton:View {
 		 .frame(width: 63,height: 63)
 		 .foregroundStyle(LinearGradient(gradient: Gradient(colors: [.gradientColor1,.gradientColor1.opacity(0.9),.gradientColor2]), startPoint: .topLeading, endPoint: .bottomTrailing))
 		 .shadow(color: .shadow, radius: 2, x: 3, y: 3)
+   }
+}
+struct WeekCapsule:View {
+   var body: some View {
+	  Capsule()
+		 .fill(Color.background)
+		 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 3, y: 3)
+		 .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+		 .frame(maxWidth: .infinity, maxHeight: 60)
    }
 }

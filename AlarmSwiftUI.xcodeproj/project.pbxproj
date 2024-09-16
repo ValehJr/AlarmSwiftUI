@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D0E39E62C941992006E99B0 /* SingleAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */; };
+		1D19007F2C95FF1E00B5FB4D /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19007E2C95FF1E00B5FB4D /* CustomPickerView.swift */; };
 		1D60B0572C92E13500A12868 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0562C92E13500A12868 /* ClockView.swift */; };
 		1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0582C92E5F500A12868 /* Shapes.swift */; };
 		1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05A2C92E64700A12868 /* ClockPointView.swift */; };
@@ -33,10 +34,13 @@
 		1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA902C932E6800167034 /* StopwatchView.swift */; };
 		1DCEAA942C9340F200167034 /* StopwatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA932C9340F200167034 /* StopwatchViewModel.swift */; };
 		1DCEAA982C93643800167034 /* Lap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCEAA972C93643800167034 /* Lap.swift */; };
+		1DF948222C982AAF00FDB590 /* DaySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF948212C982AAF00FDB590 /* DaySelectionView.swift */; };
+		1DF948242C9832F900FDB590 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF948232C9832F900FDB590 /* WeekView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAlarmView.swift; sourceTree = "<group>"; };
+		1D19007E2C95FF1E00B5FB4D /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		1D60B0562C92E13500A12868 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		1D60B0582C92E5F500A12868 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		1D60B05A2C92E64700A12868 /* ClockPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPointView.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		1DCEAA902C932E6800167034 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		1DCEAA932C9340F200167034 /* StopwatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewModel.swift; sourceTree = "<group>"; };
 		1DCEAA972C93643800167034 /* Lap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lap.swift; sourceTree = "<group>"; };
+		1DF948212C982AAF00FDB590 /* DaySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectionView.swift; sourceTree = "<group>"; };
+		1DF948232C9832F900FDB590 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,8 @@
 				1DB584672C937D78000E204F /* AlarmView.swift */,
 				1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */,
 				1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */,
+				1DF948212C982AAF00FDB590 /* DaySelectionView.swift */,
+				1DF948232C9832F900FDB590 /* WeekView.swift */,
 				1DCEAA902C932E6800167034 /* StopwatchView.swift */,
 				1DB584612C9373A7000E204F /* LapsView.swift */,
 			);
@@ -169,6 +177,7 @@
 			children = (
 				1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */,
 				1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */,
+				1D19007E2C95FF1E00B5FB4D /* CustomPickerView.swift */,
 				1D60B0582C92E5F500A12868 /* Shapes.swift */,
 				1D60B05F2C92FF9C00A12868 /* Triangle.swift */,
 			);
@@ -260,6 +269,7 @@
 				1DB584622C9373A7000E204F /* LapsView.swift in Sources */,
 				1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */,
 				1DB584642C937452000E204F /* Constant.swift in Sources */,
+				1D19007F2C95FF1E00B5FB4D /* CustomPickerView.swift in Sources */,
 				1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */,
 				1D60B0572C92E13500A12868 /* ClockView.swift in Sources */,
 				1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */,
@@ -272,10 +282,12 @@
 				1DAD04522C94CE1200DB4F4A /* AlarmSetupView.swift in Sources */,
 				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
 				1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */,
+				1DF948242C9832F900FDB590 /* WeekView.swift in Sources */,
 				1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */,
 				1DCEAA942C9340F200167034 /* StopwatchViewModel.swift in Sources */,
 				1D60B0632C9301DF00A12868 /* TimeView.swift in Sources */,
 				1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */,
+				1DF948222C982AAF00FDB590 /* DaySelectionView.swift in Sources */,
 				1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

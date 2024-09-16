@@ -35,7 +35,8 @@ struct SingleAlarmView: View {
 		  .padding(.leading,0)
 		  .padding(.vertical,10)
 	   }//Z
-	   .frame(maxWidth: 340,maxHeight: 120)
+	   .frame(maxWidth: 340)
+	   .frame(height: 120)
     }
 }
 
