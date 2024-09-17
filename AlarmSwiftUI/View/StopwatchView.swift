@@ -125,5 +125,4 @@ struct StopwatchView: View {
 
 #Preview {
    StopwatchView()
-	  .modelContainer(for: Lap.self, inMemory: true)
 }

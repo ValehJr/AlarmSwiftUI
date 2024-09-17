@@ -14,7 +14,6 @@ struct CustomToggleStyle: ToggleStyle {
 
 		 ZStack {
 			if configuration.isOn {
-
 			   LinearGradient(gradient: Gradient(colors: [Color.gradientColor1, Color.gradientColor2]), startPoint: .top, endPoint: .bottom)
 				  .clipShape(RoundedRectangle(cornerRadius: 30))
 				  .frame(width: 70, height: 40)
@@ -27,10 +26,10 @@ struct CustomToggleStyle: ToggleStyle {
 				  .shadow(color: .shadow, radius: 3, x: 3, y: 3)
 				  .overlay(
 					 RoundedRectangle(cornerRadius: 30)
-						.stroke(Color.white.opacity(0.6), lineWidth: 1) // This adds the subtle white shadow inside
+						.stroke(Color.white.opacity(0.6), lineWidth: 1)
 						.shadow(color: Color.white.opacity(0.8), radius: 1, x: -1, y: 0)
 				  )
-			}
+			}//else
 
 			Circle()
 			   .fill(Color.background.opacity(1))
@@ -38,10 +37,10 @@ struct CustomToggleStyle: ToggleStyle {
 			   .offset(x: configuration.isOn ? 14 : -14)
 			   .animation(.easeInOut(duration: 0.3), value: configuration.isOn)
 			   .shadow(color: .black.opacity(0.1), radius: 5, x: 2, y: 2)
-		 }
+		 }//
 		 .onTapGesture {
 			configuration.isOn.toggle()
 		 }
-	  }
+	  }//H
    }
 }

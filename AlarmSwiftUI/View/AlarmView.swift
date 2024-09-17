@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct AlarmView: View {
+
+   @StateObject var alarmStore = AlarmStore()
+   @State var isShowing:Bool = false
+   @State private var isEditing: Bool = false
+
    var body: some View {
 	  ZStack {
 		 VStack {
+			HStack {
+			   Spacer()
+			   Button(action: {
+				  isEditing.toggle()
+			   }, label: {
+				  Text(isEditing ? "Done" : "Edit")
+					 .font(.custom("OpenSans-Medium", size: 16))
+					 .foregroundStyle(.black)
+			   })
+			}//H
+			.padding(.horizontal)
 			ScrollView {
-			   ForEach(0..<10) { _ in
-				  SingleAlarmView()
-					 .padding()
+			   ForEach(alarmStore.alarms) { alarm in
+				  SingleAlarmView(isOn: alarm.isOn,time: alarm.time, isEditing: isEditing, onDelete: {
+					 if let index = alarmStore.alarms.firstIndex(where: { $0.id == alarm.id }) {
+						alarmStore.deleteAlarm(at: index)
+					 }
+				  })
+				  .padding()
 			   }
 			   .padding(.bottom, 60)
 			}
@@ -27,13 +47,16 @@ struct AlarmView: View {
 		 VStack {
 			Spacer()
 			Button(action: {
-			   // Your action here
+			   isShowing.toggle()
 			}, label: {
 			   AlarmPlusButton()
 			}) // Button
-		 } // VStack for Button
-
+		 }
 	  } // ZStack
+	  .popover(isPresented: $isShowing, content: {
+		 AlarmSetupView(isShowing: $isShowing)
+			.environmentObject(alarmStore)
+	  })
 
    }
 }

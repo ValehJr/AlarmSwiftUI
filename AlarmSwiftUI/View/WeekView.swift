@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WeekView: View {
-   @State private var selectedDays: [String] = []
+   @Binding var selectedDays: [String]
 
    let daysOfWeek = ["M", "T", "W", "T", "F", "S", "S"]
-   let fullDayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+   let fullDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
    var body: some View {
 	  ZStack{
@@ -38,5 +38,6 @@ struct WeekView: View {
 }
 
 #Preview {
-   WeekView()
+   @State var selectedDays = ["M","T"]
+   return WeekView(selectedDays: $selectedDays)
 }

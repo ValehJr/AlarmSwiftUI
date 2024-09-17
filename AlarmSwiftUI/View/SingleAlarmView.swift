@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct SingleAlarmView: View {
-   @State private var isOn = false
+   @State var isOn = false
+   @State var time:String = "6:30"
+   @State var days:[String] = []
+   var isEditing: Bool = false
+   var onDelete: (() -> Void)?
 
     var body: some View {
 	   ZStack {
 		  AlarmRoundedRectangle()
-			 
 		  HStack {
 			 VStack(alignment:.leading) {
-				
-				Text("6:30")
+				Text(time)
 				   .font(.custom("OpenSans-SemiBold", size: 32))
 				   .foregroundStyle(.textColor1)
 				   .padding(.bottom,4)
@@ -27,10 +29,25 @@ struct SingleAlarmView: View {
 				   .foregroundStyle(.textColor2)
 				   .padding(.horizontal,2)
 
+				
+
 			 }//V
-			 Toggle(isOn: $isOn) {
+
+			 if isEditing {
+				Button(action: {
+				   onDelete?()
+				}, label: {
+				   Text("Delete")
+					  .font(.custom("OpenSans-SemiBold", size: 18))
+					  .foregroundStyle(.red)
+				})
+				.frame(width: 70)
+			 } else {
+				Toggle(isOn: $isOn) {
+				}
+				.toggleStyle(CustomToggleStyle())
 			 }
-			 .toggleStyle(CustomToggleStyle())
+
 		  }//H
 		  .padding(.leading,0)
 		  .padding(.vertical,10)
@@ -41,5 +58,5 @@ struct SingleAlarmView: View {
 }
 
 #Preview {
-    SingleAlarmView()
+   SingleAlarmView()
 }

@@ -14,10 +14,8 @@ struct CustomPickerView: View {
    var itemHeight: CGFloat = 60
    var menuHeightMultiplier: CGFloat = 3
 
-   // Number of items to display in total, can be adjusted
    let repeatMultiplier = 20
 
-   // The repetition cycle where we want the picker to start
    let initialRepetition = 10
 
    var body: some View {
@@ -49,7 +47,6 @@ struct CustomPickerView: View {
 			.padding(.vertical, itemHeight * itemsCountAbove)
 		 }
 		 .onAppear {
-			// Start the scroll at the 50th repetition
 			let targetIndex = initialRepetition * items.count
 			selectedIndex = targetIndex % items.count
 			scrollViewProxy.scrollTo(targetIndex, anchor: .center)
@@ -61,7 +58,6 @@ struct CustomPickerView: View {
 			set: { newIndex in
 			   if let newIndex = newIndex {
 				  let itemCount = items.count
-				  // Adjust to loop the index around if it goes out of bounds
 				  selectedIndex = (newIndex + itemCount) % itemCount
 			   }
 			}
