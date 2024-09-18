@@ -28,16 +28,22 @@ struct AlarmView: View {
 			}//H
 			.padding(.horizontal)
 			ScrollView {
-			   ForEach(alarmStore.alarms) { alarm in
-				  SingleAlarmView(isOn: alarm.isOn,time: alarm.time, isEditing: isEditing, onDelete: {
+			   ForEach($alarmStore.alarms) { $alarm in
+				  SingleAlarmView(isOn: $alarm.isOn, time: alarm.time, selectedDays: alarm.days ,isEditing: isEditing, onDelete: {
 					 if let index = alarmStore.alarms.firstIndex(where: { $0.id == alarm.id }) {
 						alarmStore.deleteAlarm(at: index)
 					 }
 				  })
+				  .onChange(of: alarm.isOn) {
+					 alarmStore.toggleAlarm(alarm)
+				  }
+				  .onAppear{
+					 print(alarm)
+				  }
 				  .padding()
 			   }
 			   .padding(.bottom, 60)
-			}
+			}//Scroll
 			.frame(maxWidth: .infinity,maxHeight: .infinity)
 			.ignoresSafeArea(.all)
 			Spacer()
@@ -51,8 +57,8 @@ struct AlarmView: View {
 			}, label: {
 			   AlarmPlusButton()
 			}) // Button
-		 }
-	  } // ZStack
+		 }//V
+	  } // Z
 	  .popover(isPresented: $isShowing, content: {
 		 AlarmSetupView(isShowing: $isShowing)
 			.environmentObject(alarmStore)

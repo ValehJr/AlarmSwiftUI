@@ -69,8 +69,6 @@ class StopwatchViewModel {
 		 print("Failed to save lap: \(error)")
 	  }
    }
-
-   // Start a DispatchSourceTimer on a background queue
    private func startTimer() {
 	  let queue = DispatchQueue(label: "com.stopwatch.timer", qos: .userInteractive)
 	  timer = DispatchSource.makeTimerSource(queue: queue)
@@ -80,8 +78,6 @@ class StopwatchViewModel {
 		 guard let self = self, let startTime = self.startTime else { return }
 		 let currentTime = Date().timeIntervalSince(startTime)
 		 let totalElapsedTime = self.pausedTime + currentTime
-
-		 // Ensure that updates to the UI are done on the main thread
 		 DispatchQueue.main.async {
 			self.elapsedTime = totalElapsedTime
 		 }
@@ -89,8 +85,6 @@ class StopwatchViewModel {
 
 	  timer?.resume()
    }
-
-   // Format the time as a string
    func timeString(from timeInterval: TimeInterval) -> String {
 	  let hours = Int(timeInterval) / 3600
 	  let minutes = (Int(timeInterval) % 3600) / 60

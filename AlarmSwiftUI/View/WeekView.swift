@@ -15,9 +15,7 @@ struct WeekView: View {
 
    var body: some View {
 	  ZStack{
-		 
 		 WeekCapsule()
-
 		 HStack(spacing: 15) {
 			ForEach(0..<daysOfWeek.count, id: \.self) { index in
 			   DaySelectionView(day: daysOfWeek[index], isSelected: Binding(

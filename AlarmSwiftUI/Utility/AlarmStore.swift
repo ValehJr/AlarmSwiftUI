@@ -22,12 +22,15 @@ class AlarmStore: ObservableObject {
 	  alarms = filterAlarmsByTime()
 	  print("Added alarm: \(alarm)")
 	  saveAlarms()
+	  NotificationManager.shared.scheduleAlarm(alarm: alarm)
    }
 
    func deleteAlarm(at index: Int) {
 	  if index < alarms.count {
+		 let removedAlarm = alarms[index]
 		 alarms.remove(at: index)
 		 saveAlarms()
+		 NotificationManager.shared.cancelAlarm(for: removedAlarm)
 	  } else {
 		 print("Error: Attempted to delete alarm at an invalid index \(index).")
 	  }
@@ -53,6 +56,15 @@ class AlarmStore: ObservableObject {
 	  } else {
 		 print("No alarms file found.")
 	  }
+   }
+
+   func toggleAlarm(_ alarm: Alarm) {
+	  if alarm.isOn {
+		 NotificationManager.shared.scheduleAlarm(alarm: alarm)
+	  } else {
+		 NotificationManager.shared.cancelAlarm(for: alarm)
+	  }
+	  saveAlarms()
    }
 
    func filterAlarmsByTime() -> [Alarm] {

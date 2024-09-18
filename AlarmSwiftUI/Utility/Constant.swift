@@ -14,3 +14,13 @@ var gridLayout: [GridItem] {
 }
 let gradientColor = LinearGradient(gradient: Gradient(colors: [.gradientColor1,.gradientColor2]), startPoint: .topLeading, endPoint: .bottomTrailing)
 var linearGradientC = LinearGradient(gradient: Gradient(colors: [.clear,.clear]), startPoint: .topLeading, endPoint: .bottomTrailing)
+
+let dayStringToInt: [String: Int] = [
+   "Sun": 1,
+   "Mon": 2,
+   "Tue": 3,
+   "Wed": 4,
+   "Thu": 5,
+   "Fri": 6,
+   "Sat": 7
+]

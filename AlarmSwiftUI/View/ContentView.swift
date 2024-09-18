@@ -25,6 +25,9 @@ struct ContentView: View {
 				AlarmView()
 				   .transition(.blurReplace)
 				   .preferredColorScheme(.light)
+				   .onAppear {
+					  NotificationManager.shared.requestPermission()  // Request permission when app opens for the first time
+				   }
 			 case .stopwatch:
 				StopwatchView()
 				   .modelContainer(for:  Lap.self)

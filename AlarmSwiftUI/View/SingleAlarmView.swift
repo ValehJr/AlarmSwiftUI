@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SingleAlarmView: View {
-   @State var isOn = false
+   @Binding var isOn:Bool
    @State var time:String = "6:30"
-   @State var days:[String] = []
+   @State var selectedDays:[String] = []
+   @State var days:[String] = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
    var isEditing: Bool = false
    var onDelete: (() -> Void)?
 
@@ -24,12 +25,13 @@ struct SingleAlarmView: View {
 				   .foregroundStyle(.textColor1)
 				   .padding(.bottom,4)
 
-				Text("Mon,Tue,Wed,Thu,Fri,Sat,Sun")
-				   .font(.custom("OpenSans-Bold", size: 12))
-				   .foregroundStyle(.textColor2)
-				   .padding(.horizontal,2)
-
-				
+				HStack(spacing:5) {
+				   ForEach(days, id: \.self) { day in
+					  Text(day)
+						 .font(.custom("OpenSans-Bold", size: 12))
+						 .foregroundColor(selectedDays.contains(day) ? .gradientColor1 : .textColor2)
+				   }
+				}
 
 			 }//V
 
@@ -46,6 +48,7 @@ struct SingleAlarmView: View {
 				Toggle(isOn: $isOn) {
 				}
 				.toggleStyle(CustomToggleStyle())
+				.padding(.leading,15)
 			 }
 
 		  }//H
@@ -58,5 +61,6 @@ struct SingleAlarmView: View {
 }
 
 #Preview {
-   SingleAlarmView()
+   @State var isOn = false
+   return SingleAlarmView(isOn: $isOn)
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D0E39E62C941992006E99B0 /* SingleAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */; };
 		1D19007F2C95FF1E00B5FB4D /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19007E2C95FF1E00B5FB4D /* CustomPickerView.swift */; };
+		1D48A7572C99CDBF00808C18 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D48A7562C99CDBF00808C18 /* alarm.mp3 */; };
 		1D60B0572C92E13500A12868 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0562C92E13500A12868 /* ClockView.swift */; };
 		1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0582C92E5F500A12868 /* Shapes.swift */; };
 		1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05A2C92E64700A12868 /* ClockPointView.swift */; };
@@ -25,6 +26,7 @@
 		1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384022C91FCD4008EA6D7 /* OpenSans-Regular.ttf */; };
 		1D8384072C91FCD4008EA6D7 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */; };
 		1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */; };
+		1D84A6B92C997A3B00261AC7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D84A6B82C997A3B00261AC7 /* NotificationManager.swift */; };
 		1DAD04502C94B5CC00DB4F4A /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */; };
 		1DAD04522C94CE1200DB4F4A /* AlarmSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */; };
 		1DB584622C9373A7000E204F /* LapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB584612C9373A7000E204F /* LapsView.swift */; };
@@ -43,6 +45,7 @@
 /* Begin PBXFileReference section */
 		1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAlarmView.swift; sourceTree = "<group>"; };
 		1D19007E2C95FF1E00B5FB4D /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
+		1D48A7562C99CDBF00808C18 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		1D60B0562C92E13500A12868 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		1D60B0582C92E5F500A12868 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		1D60B05A2C92E64700A12868 /* ClockPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPointView.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		1D8384032C91FCD4008EA6D7 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		1D8384082C91FD53008EA6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D83840A2C921F1F008EA6D7 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		1D84A6B82C997A3B00261AC7 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		1DAD044F2C94B5CC00DB4F4A /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
 		1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSetupView.swift; sourceTree = "<group>"; };
 		1DB584612C9373A7000E204F /* LapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapsView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D48A7552C99CDB100808C18 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1D48A7562C99CDBF00808C18 /* alarm.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		1D8383DC2C91E120008EA6D7 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 		1D8383E72C91E120008EA6D7 /* AlarmSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1D48A7552C99CDB100808C18 /* Sounds */,
 				1D8384082C91FD53008EA6D7 /* Info.plist */,
 				1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */,
 				1D8383FA2C91E6A3008EA6D7 /* Model */,
@@ -152,6 +165,7 @@
 			children = (
 				1DB584632C937452000E204F /* Constant.swift */,
 				1DF9484F2C9886E900FDB590 /* AlarmStore.swift */,
+				1D84A6B82C997A3B00261AC7 /* NotificationManager.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -260,6 +274,7 @@
 				1D8384062C91FCD4008EA6D7 /* OpenSans-Regular.ttf in Resources */,
 				1D8384052C91FCD4008EA6D7 /* OpenSans-SemiBold.ttf in Resources */,
 				1D8383F22C91E122008EA6D7 /* Preview Assets.xcassets in Resources */,
+				1D48A7572C99CDBF00808C18 /* alarm.mp3 in Resources */,
 				1D8383EF2C91E122008EA6D7 /* Assets.xcassets in Resources */,
 				1D8384042C91FCD4008EA6D7 /* OpenSans-Bold.ttf in Resources */,
 			);
@@ -278,6 +293,7 @@
 				1D19007F2C95FF1E00B5FB4D /* CustomPickerView.swift in Sources */,
 				1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */,
 				1D60B0572C92E13500A12868 /* ClockView.swift in Sources */,
+				1D84A6B92C997A3B00261AC7 /* NotificationManager.swift in Sources */,
 				1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */,
 				1DCEAA982C93643800167034 /* Lap.swift in Sources */,
 				1DB584682C937D78000E204F /* AlarmView.swift in Sources */,
