@@ -58,6 +58,6 @@ struct ScreenSelectionView: View {
 }
 
 #Preview {
-   @State var screen = Screen.clock
+   @Previewable @State var screen = Screen.clock
    return ScreenSelectionView(selectedScreen: $screen)
 }

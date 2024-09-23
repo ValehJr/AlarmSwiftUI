@@ -63,7 +63,7 @@ struct AlarmSetupView: View {
 }
 
 #Preview {
-   @State var isShowing = false
+   @Previewable @State var isShowing = false
    return AlarmSetupView(isShowing: $isShowing)
-	  .environmentObject(AlarmStore()) // Add the AlarmStore as an environment object
+	  .environmentObject(AlarmStore())
 }

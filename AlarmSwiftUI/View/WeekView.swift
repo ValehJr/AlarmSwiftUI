@@ -36,6 +36,6 @@ struct WeekView: View {
 }
 
 #Preview {
-   @State var selectedDays = ["M","T"]
+   @Previewable @State var selectedDays = ["M","T"]
    return WeekView(selectedDays: $selectedDays)
 }

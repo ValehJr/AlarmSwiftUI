@@ -30,6 +30,6 @@ struct DaySelectionView: View {
 }
 
 #Preview {
-   @State var isSelected = false
+   @Previewable @State var isSelected = false
    return DaySelectionView(day:"M",isSelected:$isSelected)
 }

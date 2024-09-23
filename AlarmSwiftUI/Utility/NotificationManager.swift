@@ -16,7 +16,7 @@ class NotificationManager {
    private init() {}
 
    var audioPlayer: AVAudioPlayer?
-   var activeAlarms = [UUID: Bool]() // Dictionary to track active alarms by their ID
+   var activeAlarms = [UUID: Bool]()
 
    func requestPermission() {
 	  let hasRequestedPermission = UserDefaults.standard.bool(forKey: "hasRequestedNotificationPermission")
@@ -28,14 +28,13 @@ class NotificationManager {
 			} else if let error = error {
 			   print("Error: \(error.localizedDescription)")
 			}
-			// Store in UserDefaults that permission has been requested
 			UserDefaults.standard.set(true, forKey: "hasRequestedNotificationPermission")
 		 }
 	  } else {
 		 print("Notification permission has already been requested.")
 	  }
    }
-   
+
 
    func convertTimeStringToDate(_ timeString: String, on weekday: Int? = nil) -> Date? {
 	  let formatter = DateFormatter()
@@ -65,7 +64,6 @@ class NotificationManager {
 	  activeAlarms[alarm.id] = true
 
 	  if !alarm.days.isEmpty {
-		 // Schedule sound playback for each selected day
 		 for dayString in alarm.days {
 			if let day = dayStringToInt[dayString], let triggerDate = convertTimeStringToDate(alarm.time, on: day) {
 			   let timerInterval = triggerDate.timeIntervalSinceNow
@@ -77,7 +75,6 @@ class NotificationManager {
 			}
 		 }
 	  } else {
-		 // Schedule one-time sound playback
 		 if let triggerDate = convertTimeStringToDate(alarm.time) {
 			let timerInterval = triggerDate.timeIntervalSinceNow
 			if timerInterval > 0 {
@@ -89,8 +86,89 @@ class NotificationManager {
 	  }
    }
 
+   func scheduleAlarmNotification(alarm: Alarm) {
+	  guard alarm.isOn else {
+		 print("Alarm is off, no notification will be scheduled.")
+		 return
+	  }
+
+	  activeAlarms[alarm.id] = true
+
+	  let content = UNMutableNotificationContent()
+	  content.title = "Alarm"
+	  content.body = "Your alarm is ringing!"
+	  content.sound = .default
+
+	  if activeAlarms[alarm.id] == true {
+		 if !alarm.days.isEmpty {
+			for dayString in alarm.days {
+			   if let day = dayStringToInt[dayString], let triggerDate = convertTimeStringToDate(alarm.time, on: day) {
+				  let dateComponents = Calendar.current.dateComponents([.hour, .minute, .weekday], from: triggerDate)
+				  let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+				  let request = UNNotificationRequest(identifier: "\(alarm.id.uuidString)_\(day)", content: content, trigger: trigger)
+				  UNUserNotificationCenter.current().add(request) { error in
+					 if let error = error {
+						print("Error scheduling notification for day \(day): \(error.localizedDescription)")
+					 }
+				  }
+			   }
+			}
+		 } else {
+			if let triggerDate = convertTimeStringToDate(alarm.time) {
+			   let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: triggerDate)
+			   let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+
+			   let request = UNNotificationRequest(identifier: alarm.id.uuidString, content: content, trigger: trigger)
+			   UNUserNotificationCenter.current().add(request) { error in
+				  if let error = error {
+					 print("Error scheduling one-time notification: \(error.localizedDescription)")
+				  }
+			   }
+			}
+		 }
+	  }
+   }
+
+   //   func printPendingNotifications() {
+   //	  UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
+   //		 print("Pending Notifications: \(notifications.map { $0.identifier })")
+   //	  }
+   //   }
+
+
+   func cancelNotification(for alarm: Alarm) {
+	  var identifiersToCancel = [alarm.id.uuidString] // One-time alarm ID
+	  activeAlarms[alarm.id] = false
+
+	  // If the alarm has specific days, add the day-specific IDs to the list
+	  if !alarm.days.isEmpty {
+		 for day in alarm.days {
+			// Use the integer representation for the day
+			if let dayInt = dayStringToInt[day] {
+			   let identifier = "\(alarm.id.uuidString)_\(dayInt)"
+			   identifiersToCancel.append(identifier)
+			}
+		 }
+	  }
+
+	  //	  	print("Identifiers to cancel: \(identifiersToCancel)")
+	  //
+	  //	  	print("Before canceling notifications for alarm \(alarm.id.uuidString):")
+	  //		printPendingNotifications()
+
+	  // Cancel all pending notifications
+	  UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiersToCancel)
+
+	  UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: identifiersToCancel)
+	  //print("Cancelled notifications for alarm \(alarm.id.uuidString) on days: \(alarm.days)")
+	  //	  DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // Give it a second to cancel
+	  //		 print("After canceling notifications for alarm \(alarm.id.uuidString):")
+	  //		 self.printPendingNotifications()
+	  //	  }
+   }
+
    func playSoundIfAlarmIsActive(_ alarm: Alarm) {
-	  // Check if the alarm is still active before playing the sound
 	  if activeAlarms[alarm.id] == true {
 		 playAlarmSound()
 	  } else {
@@ -107,16 +185,15 @@ class NotificationManager {
 	  do {
 		 audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
 		 audioPlayer?.play()
-		 print("Playing alarm sound.")
+		 //print("Playing alarm sound.")
 	  } catch {
 		 print("Error playing sound: \(error.localizedDescription)")
 	  }
    }
 
+
    func cancelAlarm(for alarm: Alarm) {
-	  // Mark the alarm as inactive
 	  activeAlarms[alarm.id] = false
-	  print("Cancelled alarm \(alarm.id.uuidString).")
+	  //print("Cancelled alarm \(alarm.id.uuidString).")
    }
 }
-

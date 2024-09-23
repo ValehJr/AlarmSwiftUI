@@ -27,7 +27,7 @@ struct TimeView: View {
 }
 
 #Preview {
-   @State var time = "15:30"
-   @State var date = "Monday, 10 august"
+   @Previewable @State var time = "15:30"
+   @Previewable @State var date = "Monday, 10 august"
    return TimeView(time: $time, date: $date)
 }

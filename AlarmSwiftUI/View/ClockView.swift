@@ -10,6 +10,7 @@ import SwiftUI
 struct ClockView: View {
    @State private var currentMinuteAngle: Double = 0
    @State private var currentHourAngle: Double = 0
+   @State private var currentSecondAngle: Double = 0
    @State private var currentTime: String = ""
    @State private var currentDate: String = ""
    @State private var timer: Timer?
@@ -24,11 +25,19 @@ struct ClockView: View {
 			MinuteTriangle()
 			   .rotationEffect(Angle.degrees(currentMinuteAngle),anchor: .bottom)
 			   .offset(x:0,y:-43)
+
 			HourTriangle()
 			   .rotationEffect(Angle.degrees(currentHourAngle),anchor: .bottom)
 			   .offset(x:0,y:-32)
+
+			SecondRectangle()
+			   .rotationEffect(Angle.degrees(currentSecondAngle), anchor: .bottom)
+			   .offset(x:0,y:-45)
+
+
 			SmallCircle()
 			GradientCircle()
+
 
 			ForEach(0..<12) { i in
 			   let angle = Angle.degrees(Double(i) / 12 * 360)
@@ -46,8 +55,9 @@ struct ClockView: View {
 	  }
 	  .onAppear {
 		 updateClockAngles()
-		 scheduleNextTimer()
+		 startRepeatingTimer()
 	  }
+
 	  .onDisappear {
 		 stopTimer()
 	  }
@@ -59,6 +69,8 @@ struct ClockView: View {
 
 	  let hourAM = calendar.component(.hour, from: date) % 12
 	  let minute = calendar.component(.minute, from: date)
+	  let second = calendar.component(.second, from: date)
+
 
 	  currentTime = "\(Date.now.formatted(date: .omitted, time: .shortened))"
 
@@ -68,23 +80,11 @@ struct ClockView: View {
 
 	  currentHourAngle = Double(hourAM) / 12 * 360 + Double(minute) / 60 * 30
 	  currentMinuteAngle = Double(minute) / 60 * 360
-   }
-
-   func scheduleNextTimer() {
-	  let calendar = Calendar.current
-	  let date = Date()
-
-	  let seconds = calendar.component(.second, from: date)
-	  let timeIntervalUntilNextMinute = Double(60 - seconds)
-
-	  timer = Timer.scheduledTimer(withTimeInterval: timeIntervalUntilNextMinute, repeats: false) { _ in
-		 updateClockAngles()
-		 startRepeatingTimer()
-	  }
+	  currentSecondAngle = Double(second) / 60 * 360
    }
 
    func startRepeatingTimer() {
-	  timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
+	  timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
 		 updateClockAngles()
 	  }
    }

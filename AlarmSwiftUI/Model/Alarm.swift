@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Alarm: Identifiable, Codable {
+struct Alarm: Identifiable, Codable, Equatable {
    var id = UUID()
    var time: String
    var days: [String]

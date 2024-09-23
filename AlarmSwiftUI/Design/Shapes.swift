@@ -68,6 +68,14 @@ struct HourTriangle:View {
    }
 }
 
+struct SecondRectangle: View {
+   var body: some View {
+	  RoundedRectangle(cornerRadius: 28)
+		 .fill(Color.gradientColor1)
+		 .frame(width: 1.5,height: 90)
+   }
+}
+
 struct TimeCapsule:View {
    var body: some View {
 	  Capsule()

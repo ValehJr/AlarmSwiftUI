@@ -23,6 +23,7 @@ class AlarmStore: ObservableObject {
 	  print("Added alarm: \(alarm)")
 	  saveAlarms()
 	  NotificationManager.shared.scheduleAlarm(alarm: alarm)
+	  NotificationManager.shared.scheduleAlarmNotification(alarm: alarm)
    }
 
    func deleteAlarm(at index: Int) {
@@ -31,10 +32,24 @@ class AlarmStore: ObservableObject {
 		 alarms.remove(at: index)
 		 saveAlarms()
 		 NotificationManager.shared.cancelAlarm(for: removedAlarm)
+		 NotificationManager.shared.cancelNotification(for: removedAlarm)
 	  } else {
 		 print("Error: Attempted to delete alarm at an invalid index \(index).")
 	  }
    }
+
+   func editAlarm(_ updatedAlarm: Alarm, at index: Int) {
+	  if index < alarms.count {
+		 alarms[index] = updatedAlarm
+		 alarms = filterAlarmsByTime()
+		 print("Edited alarm: \(updatedAlarm)")
+		 saveAlarms()
+		 toggleAlarm(updatedAlarm)
+	  } else {
+		 print("Error: Attempted to edit alarm at an invalid index \(index).")
+	  }
+   }
+
 
    func saveAlarms() {
 	  if let encoded = try? JSONEncoder().encode(alarms) {
@@ -61,8 +76,10 @@ class AlarmStore: ObservableObject {
    func toggleAlarm(_ alarm: Alarm) {
 	  if alarm.isOn {
 		 NotificationManager.shared.scheduleAlarm(alarm: alarm)
+		 NotificationManager.shared.scheduleAlarmNotification(alarm: alarm)
 	  } else {
 		 NotificationManager.shared.cancelAlarm(for: alarm)
+		 NotificationManager.shared.cancelNotification(for: alarm)
 	  }
 	  saveAlarms()
    }

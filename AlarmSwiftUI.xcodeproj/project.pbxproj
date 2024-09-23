@@ -15,6 +15,7 @@
 		1D60B05B2C92E64700A12868 /* ClockPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05A2C92E64700A12868 /* ClockPointView.swift */; };
 		1D60B0602C92FF9C00A12868 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B05F2C92FF9C00A12868 /* Triangle.swift */; };
 		1D60B0632C9301DF00A12868 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60B0622C9301DF00A12868 /* TimeView.swift */; };
+		1D75EEBB2C9C2B9F00575F94 /* AlarmEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D75EEBA2C9C2B9F00575F94 /* AlarmEditView.swift */; };
 		1D8383E92C91E120008EA6D7 /* AlarmSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */; };
 		1D8383EB2C91E120008EA6D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383EA2C91E120008EA6D7 /* ContentView.swift */; };
 		1D8383ED2C91E120008EA6D7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8383EC2C91E120008EA6D7 /* Item.swift */; };
@@ -51,6 +52,7 @@
 		1D60B05A2C92E64700A12868 /* ClockPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockPointView.swift; sourceTree = "<group>"; };
 		1D60B05F2C92FF9C00A12868 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		1D60B0622C9301DF00A12868 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		1D75EEBA2C9C2B9F00575F94 /* AlarmEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmEditView.swift; sourceTree = "<group>"; };
 		1D8383E52C91E120008EA6D7 /* AlarmSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D8383E82C91E120008EA6D7 /* AlarmSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSwiftUIApp.swift; sourceTree = "<group>"; };
 		1D8383EA2C91E120008EA6D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				1DB584672C937D78000E204F /* AlarmView.swift */,
 				1D0E39E52C941992006E99B0 /* SingleAlarmView.swift */,
 				1DAD04512C94CE1200DB4F4A /* AlarmSetupView.swift */,
+				1D75EEBA2C9C2B9F00575F94 /* AlarmEditView.swift */,
 				1DF948212C982AAF00FDB590 /* DaySelectionView.swift */,
 				1DF948232C9832F900FDB590 /* WeekView.swift */,
 				1DCEAA902C932E6800167034 /* StopwatchView.swift */,
@@ -305,6 +308,7 @@
 				1D0E39E62C941992006E99B0 /* SingleAlarmView.swift in Sources */,
 				1DAD04522C94CE1200DB4F4A /* AlarmSetupView.swift in Sources */,
 				1D83840B2C921F1F008EA6D7 /* CustomButtonStyle.swift in Sources */,
+				1D75EEBB2C9C2B9F00575F94 /* AlarmEditView.swift in Sources */,
 				1DCEAA912C932E6800167034 /* StopwatchView.swift in Sources */,
 				1DF948242C9832F900FDB590 /* WeekView.swift in Sources */,
 				1D60B0592C92E5F500A12868 /* Shapes.swift in Sources */,
